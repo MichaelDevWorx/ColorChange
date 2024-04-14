@@ -1,13 +1,22 @@
-
 function changeColor() {
     
     let colorList = Object.keys(colorNames);
     let randomColor = colorList[Math.floor(Math.random(colorList.length)*colorList.length)];
-    console.log(randomColor);
-    document.getElementById("displayColor").innerHTML = "Background Color: " + randomColor;
+    let randomPhrase = phrases[Math.floor(Math.random(phrases.length)*phrases.length)];
+    let lowerCaseColor = (randomColor.replace(/([A-Z])/g, ' $1').trim()).toLowerCase();
+    document.getElementById("displayColor").innerHTML = randomPhrase + " " + lowerCaseColor + ".";
     document.body.style.backgroundColor = randomColor;
    
-}
+};
+
+const phrases = [
+    "I love the color",
+    "Not a huge fan of",
+    "Now the background is",
+    "I wish the sky was",
+    "I should paint my bedroom",
+    "I once saw a zebra the color"
+]
 
 const colorNames = {
     AliceBlue: '#F0F8FF',
